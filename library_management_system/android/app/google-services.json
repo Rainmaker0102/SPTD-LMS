@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "408184381219",
+    "project_id": "sptd-lms",
+    "storage_bucket": "sptd-lms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408184381219:android:3f9342e046ae70ea463696",
+        "android_client_info": {
+          "package_name": "com.example.library_management_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408184381219-b56ql9i46rp8a9tp9koveva8mbalac3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTeDs52yR-S_eciDUD5acdXJ6tz9DHJI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408184381219-b56ql9i46rp8a9tp9koveva8mbalac3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
