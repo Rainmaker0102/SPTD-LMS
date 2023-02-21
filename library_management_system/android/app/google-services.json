@@ -29,6 +29,13 @@
             {
               "client_id": "408184381219-b56ql9i46rp8a9tp9koveva8mbalac3e.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "408184381219-6s56q1jaoihjq3gne2ehm7g51mq0jd99.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.libraryManagementSystem"
+              }
             }
           ]
         }
