@@ -93,6 +93,10 @@ class _SignupPageState extends State<SignupPage> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
+                    //hintText: "Email", 
+                    //prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
+                    //hintText: "Password",
+                    //prefixIcon: Icon(Icons,password_outlined, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
