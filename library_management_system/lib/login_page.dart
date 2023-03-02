@@ -2,9 +2,12 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:library_management_system/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -127,7 +130,15 @@ class _LoginPageState extends State<LoginPage> {
             text: "Don't have an account?", style: TextStyle(color: Colors.white, fontSize: 15,),
             children: [
               TextSpan(
-                text: " Create", style: TextStyle(color: Color.fromARGB(255, 204, 204, 204), fontSize: 15, fontWeight: FontWeight.bold),
+                text: " Create", 
+                style: TextStyle(
+                  color: Color.fromARGB(255, 204, 204, 204), 
+                  fontSize: 15, 
+                  fontWeight: FontWeight.bold
+                ),
+                recognizer: TapGestureRecognizer()..onTap=(){
+                  Get.to(()=>SignupPage());
+                }
               )
             ],
           ),),
