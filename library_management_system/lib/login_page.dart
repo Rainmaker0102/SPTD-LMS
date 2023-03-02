@@ -1,6 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
 
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:library_management_system/signup_page.dart';
+import 'package:library_management_system/welcome_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -51,14 +51,16 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 204, 204, 204)),
                 ),
                 const SizedBox(height: 40,),
-                const Text(
+                /*const Text(
                   "Email",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 10,),*/
                 const TextField(
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
+                    hintText: "Email",
+                    prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -74,14 +76,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(height: 20,),
-                const Text(
+                /*const Text(
                   "Password",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 10,),*/
                 const TextField(
+                  obscureText: true,
+                  enableSuggestions: false,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.password_outlined, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -110,7 +116,29 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
           ),
-          Container(
+          SizedBox(height: 20),
+          Material(
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+            child: InkWell(
+            child: Container(
+              width: w*.15,
+              height: 40,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.amber,
+              ),
+              child: const Center(
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ),
+            ),
+            onTap: ()=>Get.to(()=>WelcomePage())
+            ),
+          ),
+          /*Container(
+            
             margin: const EdgeInsets.only(top: 20),
             width: w*.15,
             height: 50,
@@ -124,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
               ),
             ),
-          ),
+          ),*/
           SizedBox(height: 10,),
           RichText(text: TextSpan(
             text: "Don't have an account?", style: TextStyle(color: Colors.white, fontSize: 15,),
