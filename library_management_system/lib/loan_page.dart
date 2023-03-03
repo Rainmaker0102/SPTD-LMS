@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class AccountInfoPage extends StatefulWidget {
-  const AccountInfoPage({super.key});
+class LoanPage extends StatefulWidget {
+  const LoanPage({super.key});
 
   @override
-  State<AccountInfoPage> createState() => _AccountInfoPageState();
+  State<LoanPage> createState() => _LoanPageState();
 }
 
-class _AccountInfoPageState extends State<AccountInfoPage> {
+class _LoanPageState extends State<LoanPage> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -25,7 +25,7 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
             child: Column(
               children: const [
                 Text(
-                  "Account Information",
+                  "Loans",
                   style: TextStyle(
                       fontSize: 100,
                       fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  "Edit Account Details",
+                  "Loan an item out from Khadka's Library",
                   style: TextStyle(
                       fontSize: 40, color: Color.fromARGB(255, 204, 204, 204)),
                 ),
