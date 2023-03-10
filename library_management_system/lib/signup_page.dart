@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:library_management_system/login_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -39,14 +42,16 @@ class _SignupPageState extends State<SignupPage> {
                   style: TextStyle(fontSize: 40, color: Color.fromARGB(255, 204, 204, 204)),
                 ),
                 SizedBox(height: 40,),
-                Text(
+                /*Text(
                   "Email",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
-                SizedBox(height: 10,),
+                SizedBox(height: 10,),*/
                 TextField(
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
+                    hintText: "Email",
+                    prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -62,14 +67,18 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 SizedBox(height: 20,),
-                Text(
+                /*Text(
                   "Password",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
-                SizedBox(height: 10,),
+                SizedBox(height: 10,),*/
                 TextField(
+                  obscureText: true,
+                  enableSuggestions: false,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.password_outlined, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -85,18 +94,20 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 SizedBox(height: 20,),
-                Text(
+                /*Text(
                   "Confirm Password",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
-                SizedBox(height: 10,),
+                SizedBox(height: 10,),*/
                 TextField(
+                  obscureText: true,
+                  enableSuggestions: false,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     //hintText: "Email", 
                     //prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
-                    //hintText: "Password",
-                    //prefixIcon: Icon(Icons,password_outlined, color: Colors.blueAccent),
+                    hintText: "Confirm Password",
+                    prefixIcon: Icon(Icons.password_outlined, color: Colors.blueAccent),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -137,7 +148,10 @@ class _SignupPageState extends State<SignupPage> {
             children: [
               TextSpan(
                 text: " Login", style: TextStyle(color: Color.fromARGB(255, 204, 204, 204), fontSize: 15, fontWeight: FontWeight.bold),
-              )
+                recognizer: TapGestureRecognizer()..onTap=(){
+                  Get.to(()=>LoginPage());
+                }
+              ),
             ],
           ),),
         ],
