@@ -26,30 +26,90 @@ class _HomePageState extends State<HomePage> {
     double h = MediaQuery.of(context).size.height;
     final ButtonStyle style =
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 40));
+
+    int _selectedIndex = 0;
+    NavigationRailLabelType labelType = NavigationRailLabelType.all;
+    bool showLeading = false;
+    bool showTrailing = false;
+    double groupAligment = -1.0;
+
     return Scaffold(
       backgroundColor: Colors.lightGreen,
-      body: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: 50),
-            width: w,
-            height: h*.2,
-            child: Column(children: const [
-              Text("Library Home",
-                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
-              )
-            ],),
+      body: Row(
+        children: <Widget>[
+        NavigationRail(
+        selectedIndex: _selectedIndex,
+        groupAlignment: groupAligment,
+        onDestinationSelected: (int index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        labelType: labelType,
+        leading: showLeading
+            ? FloatingActionButton(
+          elevation: 0,
+          onPressed: () {
+            // Add your onPressed code here!
+          },
+          child: const Icon(Icons.add),
+        )
+            : const SizedBox(),
+        trailing: showTrailing
+            ? IconButton(
+          onPressed: () {
+            // Add your onPressed code here!
+          },
+          icon: const Icon(Icons.more_horiz_rounded),
+        )
+            : const SizedBox(),
+        destinations: const <NavigationRailDestination>[
+          NavigationRailDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
+            label: Text('Home'),
           ),
-
-          const SizedBox(height: 80,),
-
-          ElevatedButton(
-            style: style,
-            onPressed: () {},
-            child: const Text('Browse Catalog'),
+          NavigationRailDestination(
+            icon: Icon(Icons.book_outlined),
+            selectedIcon: Icon(Icons.book),
+            label: Text('Loans'),
+          ),
+          NavigationRailDestination(
+            icon: Icon(Icons.key_off_outlined),
+            selectedIcon: Icon(Icons.key_off),
+            label: Text('Logout'),
           ),
         ],
       ),
+
+      const VerticalDivider(thickness: 1, width: 1),
+
+      Expanded(
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 50),
+                width: w,
+                height: h*.2,
+                child: Column(children: const [
+                  Text("Library Home",
+                    style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
+                  )
+                ],),
+              ),
+
+              const SizedBox(height: 80,),
+
+              ElevatedButton(
+                style: style,
+                onPressed: () {},
+                child: const Text('Browse Catalog'),
+              ),
+            ],
+          ),
+      )
+    ],
+    )
     );
   }
 }

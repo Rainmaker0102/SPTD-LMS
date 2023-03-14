@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:library_management_system/login_page.dart';
 import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
+import 'package:library_management_system/loan_page.dart';
 import 'package:library_management_system/home_page.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
