@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -9,7 +10,28 @@ class AccountInfoPage extends StatefulWidget {
   State<AccountInfoPage> createState() => _AccountInfoPageState();
 }
 
+FirebaseFirestore fs = FirebaseFirestore.instance;
+
 class _AccountInfoPageState extends State<AccountInfoPage> {
+  final controllerAddress = TextEditingController();
+  final controllerID = TextEditingController();
+  final controllerRole = TextEditingController();
+  final controllerName = TextEditingController();
+  final controllerNumber = TextEditingController();
+
+  // This is the user variable so that each of the textfields can auto-populate
+  // and update with the information of the current user being modified.
+  // IDEA: Using the onChanged: (text) {} method on each textField, each part
+  // of the user's info can be updated.
+  final user = <String, dynamic>{
+    "Address": "default_address",
+    "ID-Card": 0109115100,
+    "Loans": 0,
+    "Name": "Default Name",
+    "Phone Number": 0000000000,
+    "Role": "Patron"
+  };
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -38,24 +60,25 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
             width: 650,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   "Edit Account Details",
                   style: TextStyle(
                       fontSize: 40, color: Color.fromARGB(255, 204, 204, 204)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
-                Text(
+                const Text(
                   "Address",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  decoration: InputDecoration(
+                  controller: controllerAddress,
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
@@ -65,18 +88,19 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
                           borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "ID-Card",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  decoration: InputDecoration(
+                  controller: controllerID,
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
@@ -86,18 +110,19 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
                           borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Name",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  decoration: InputDecoration(
+                  controller: controllerName,
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       //hintText: "Email",
@@ -111,18 +136,19 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
                           borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Phone Number",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  decoration: InputDecoration(
+                  controller: controllerNumber,
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       //hintText: "Email",
@@ -136,18 +162,19 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
                           borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)))),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Role",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  decoration: InputDecoration(
+                  controller: controllerRole,
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
@@ -181,6 +208,7 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
           const SizedBox(
             height: 10,
           ),
+          
           // RichText(
           //   text: const TextSpan(
           //     text: "Already have an account?",
