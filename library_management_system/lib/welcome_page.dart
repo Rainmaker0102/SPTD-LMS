@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:library_management_system/authorization_control.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+
+
+/*class WelcomePage extends StatefulWidget {String email;
+  WelcomePage({super.key, required this.email});
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
-}
+}*/
 
-class _WelcomePageState extends State<WelcomePage> {
+class WelcomePage extends StatelessWidget{
+  String email;
+  WelcomePage({Key? key, required this.email}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -35,34 +41,39 @@ class _WelcomePageState extends State<WelcomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hello",
+                  "Welcome",
                   style: TextStyle(
                     fontSize: 30,
-                    color: Colors.grey
+                    color: Colors.white
                   ),
                 ),
                 Text(
-                  "name@email.com",
+                  email,
                   style: TextStyle(
                     fontSize: 30,
-                    color: Colors.grey
+                    color: Colors.white
                   ),
                 ),
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 20),
-            width: w*.15,
-            height: 50,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              color: Colors.amber,
-            ),
-            child: const Center(
-              child: Text(
-                "Logout",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+          GestureDetector(
+            onTap: (){
+              AuthorizationControl.instance.logOut();
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 20),
+              width: w*.15,
+              height: 50,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.amber,
+              ),
+              child: const Center(
+                child: Text(
+                  "Logout",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
               ),
             ),
           ),

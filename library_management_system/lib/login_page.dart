@@ -1,11 +1,13 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:library_management_system/authorization_control.dart';
 import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
 
@@ -17,6 +19,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  var emailText = TextEditingController();
+  var passwordText = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -55,7 +61,8 @@ class _LoginPageState extends State<LoginPage> {
                   "Email",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
                 const SizedBox(height: 10,),*/
-                const TextField(
+                TextField(
+                  controller: emailText,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -80,7 +87,8 @@ class _LoginPageState extends State<LoginPage> {
                   "Password",
                   style: TextStyle(fontSize: 20, color: Colors.white),),
                 const SizedBox(height: 10,),*/
-                const TextField(
+                TextField(
+                  controller: passwordText,
                   obscureText: true,
                   enableSuggestions: false,
                   decoration: InputDecoration(
@@ -134,7 +142,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            onTap: ()=>Get.to(()=>WelcomePage())
+            onTap: (){
+              AuthorizationControl.instance.login(emailText.text.trim(), passwordText.text.trim());
+            },
             ),
           ),
           /*Container(
