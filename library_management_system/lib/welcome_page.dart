@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -51,14 +52,8 @@ class _WelcomePageState extends State<WelcomePage> {
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 20),
-            width: w*.15,
-            height: 50,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              color: Colors.amber,
-            ),
+          ElevatedButton(
+            onPressed: () => Get.to(() => WelcomePage()),
             child: const Center(
               child: Text(
                 "Logout",

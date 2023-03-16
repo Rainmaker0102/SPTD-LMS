@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:library_management_system/home_page.dart';
 import 'package:library_management_system/login_page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -133,21 +134,32 @@ class _SignupPageState extends State<SignupPage> {
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 20),
-            width: w * .15,
-            height: 50,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              color: Colors.amber,
-            ),
-            child: const Center(
-              child: Text(
-                "Signup",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+          // Container(
+          //   margin: const EdgeInsets.only(top: 20),
+          //   width: w * .15,
+          //   height: 50,
+          //   decoration: const BoxDecoration(
+          //     borderRadius: BorderRadius.all(Radius.circular(30)),
+          //     color: Colors.amber,
+          //   ),
+          //   child: const Center(
+          //     child: Text(
+          //       "Signup",
+          //       style: TextStyle(
+          //           fontSize: 30,
+          //           fontWeight: FontWeight.bold,
+          //           color: Colors.white),
+          //     ),
+          //   ),
+          // ),
+          ElevatedButton(
+            onPressed: () => Get.to(() => HomePage()), 
+            child: Text(
+              "Signup",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),
