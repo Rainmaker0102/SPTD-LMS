@@ -6,6 +6,7 @@ import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
 import 'package:library_management_system/loan_page.dart';
 import 'package:library_management_system/home_page.dart';
+import 'package:library_management_system/debug_menu.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
 
@@ -24,12 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.red,
-      ),
-      home: LoginPage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+        ),
+        // home: LoginPage(),
+        home: DebugMenu(),
+      );
   }
 }
