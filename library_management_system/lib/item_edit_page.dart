@@ -34,99 +34,97 @@ class _ItemEditPageState extends State<ItemEditPage> {
               ],
             ),
           ),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Title",
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Title",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+              const TextField(
+                // controller: controllerTitle,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(20)))),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "ISBN Number",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+              const TextField(
+                // controller: controllerISBN,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(20)))),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Genre",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+              const TextField(
+                // controller: controller,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(20)))),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Submit",
                     style: TextStyle(
-                        fontSize: 40,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
                 ),
-                TextField(
-                  // controller: controllerTitle,
-                  decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.all(Radius.circular(20)))),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "ISBN Number",
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-                TextField(
-                  // controller: controllerISBN,
-                  decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.all(Radius.circular(20)))),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Genre",
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-                TextField(
-                  // controller: controller,
-                  decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.all(Radius.circular(20)))),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Center(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Submit",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           )
         ],
       ),

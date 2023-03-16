@@ -2,12 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:library_management_system/catalog_page.dart';
-import 'package:library_management_system/debug_menu.dart';
-import 'package:library_management_system/home_page.dart';
-import 'package:library_management_system/item_edit_page.dart';
 
 import 'login_page.dart';
-import 'welcome_page.dart';
 
 class AuthorizationControl extends GetxController {
   static AuthorizationControl instance = Get.find();
@@ -28,7 +24,7 @@ class AuthorizationControl extends GetxController {
     if (user == null) {
       print("Login page");
       Get.offAll(
-          () => LoginPage()); //comment out to test a different page on startup
+          () => const LoginPage()); //comment out to test a different page on startup
       // Get.offAll(()=>DebugMenu()); //change the part to whatever page you want to test
       //Get.offAll(()=>INSERTPAGETO_OPEN()); //change the part to whatever page you want to test
     } else {
@@ -44,13 +40,13 @@ class AuthorizationControl extends GetxController {
       Get.snackbar("About User", "User Message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Account creation failed",
             style: TextStyle(color: Colors.white),
           ),
           messageText: Text(
             e.toString(),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ));
     }
   }
@@ -62,13 +58,13 @@ class AuthorizationControl extends GetxController {
       Get.snackbar("About Login", "Login Message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Login failed",
             style: TextStyle(color: Colors.white),
           ),
           messageText: Text(
             e.toString(),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ));
     }
   }
