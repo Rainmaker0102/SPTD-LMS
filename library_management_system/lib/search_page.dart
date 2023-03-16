@@ -18,7 +18,6 @@ class _SearchPageState extends State<SearchPage>{
     for (var element in data) {
       FirebaseFirestore.instance.collection('Books').add(element);
     }
-    print('all data added');
   }
 
   @override
@@ -29,6 +28,7 @@ class _SearchPageState extends State<SearchPage>{
     addData();
   }
 
+  @override
   Widget build(BuildContext context) {
     
     return Scaffold(

@@ -1,14 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:library_management_system/search_page.dart';
-import 'package:library_management_system/signup_page.dart';
-import 'package:library_management_system/welcome_page.dart';
 
 import 'authorization_control.dart';
 
@@ -21,7 +15,6 @@ class CatalogPage extends StatefulWidget {
 }
 
 class _CatalogPageState extends State<CatalogPage> {
-
   var selectedIndex = 0;
 
   @override
@@ -47,26 +40,24 @@ class _CatalogPageState extends State<CatalogPage> {
 
           const SizedBox(height: 30,),
 
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Signed in as:",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Signed in as:",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white
                     ),
-                    Text(
-                      widget.email,
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white
-                      ),
+                  ),
+                  Text(
+                    widget.email,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      color: Colors.white
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
 
               const SizedBox(height: 50,),
@@ -74,7 +65,7 @@ class _CatalogPageState extends State<CatalogPage> {
           ElevatedButton(
             style: style,
             onPressed: () {
-              Get.to(()=>SearchPage());
+              Get.to(()=>const SearchPage());
             },
             child: const Text('Browse Catalog'),
           ),

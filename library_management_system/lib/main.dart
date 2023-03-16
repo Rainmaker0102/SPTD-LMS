@@ -1,12 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:library_management_system/authorization_control.dart';
-import 'package:library_management_system/item_edit_page.dart';
-import 'package:library_management_system/login_page.dart';
-import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/splash_screen.dart';
-import 'package:library_management_system/welcome_page.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.red,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

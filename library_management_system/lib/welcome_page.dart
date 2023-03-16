@@ -35,27 +35,25 @@ class WelcomePage extends StatelessWidget{
               )
             ],),
           ),
-          SizedBox(height: 20,),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Welcome",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white
-                  ),
+          const SizedBox(height: 20,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white
                 ),
-                Text(
-                  email,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white
-                  ),
+              ),
+              Text(
+                email,
+                style: const TextStyle(
+                  fontSize: 30,
+                  color: Colors.white
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           GestureDetector(
             onTap: (){
@@ -77,7 +75,7 @@ class WelcomePage extends StatelessWidget{
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
         ],
       ),
     );
