@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     double groupAligment = -1.0;
 
     return Scaffold(
-      backgroundColor: Colors.lightGreen,
+      backgroundColor: Colors.white,
       body: Row(
         children: <Widget>[
         NavigationRail(
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 height: h*.2,
                 child: Column(children: const [
                   Text("Library Home",
-                    style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.green),
                   )
                 ],),
               ),

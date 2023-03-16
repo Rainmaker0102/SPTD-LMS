@@ -1,15 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:library_management_system/search_page.dart';
-import 'package:library_management_system/signup_page.dart';
-import 'package:library_management_system/welcome_page.dart';
-
 import 'authorization_control.dart';
 
 class CatalogPage extends StatefulWidget {

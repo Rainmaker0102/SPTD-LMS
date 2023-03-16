@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.white,
       
       body: Column(
         children: [
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             height: h*.2,
             child: Column(children: const [
               Text("Khadka Library System",
-                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.green),
               )
             ],),
           ),
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [ //remove const?
                 const Text(
                   "Welcome",
-                  style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 204, 204, 204)),
                 ),
                 const Text(
                   "Sign into your account",
@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Email",
-                    prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
+                    prefixIcon: Icon(Icons.email, color: Colors.lightGreen),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Password",
-                    prefixIcon: Icon(Icons.password_outlined, color: Colors.blueAccent),
+                    prefixIcon: Icon(Icons.password_outlined, color: Colors.lightGreen),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 40,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Colors.amber,
+                color: Colors.lightGreen,
               ),
               child: const Center(
                 child: Text(
@@ -165,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
           ),*/
           SizedBox(height: 10,),
           RichText(text: TextSpan(
-            text: "Don't have an account?", style: TextStyle(color: Colors.white, fontSize: 15,),
+            text: "Don't have an account?", style: TextStyle(color: Colors.green, fontSize: 15,),
             children: [
               TextSpan(
                 text: " Create", 

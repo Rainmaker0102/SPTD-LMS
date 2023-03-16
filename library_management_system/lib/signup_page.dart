@@ -24,7 +24,7 @@ class _SignupPageState extends State<SignupPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.white,
       
       body: Column(
         children: [
@@ -34,7 +34,7 @@ class _SignupPageState extends State<SignupPage> {
             height: h*.2,
             child: Column(children: const [
               Text("Signup",
-                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.green),
               )
             ],),
           ),
@@ -58,7 +58,7 @@ class _SignupPageState extends State<SignupPage> {
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Email",
-                    prefixIcon: Icon(Icons.email, color: Colors.blueAccent),
+                    prefixIcon: Icon(Icons.email, color: Colors.lightGreen),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -67,7 +67,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.white
+                        color: Colors.green
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(20))
                     )
@@ -86,7 +86,7 @@ class _SignupPageState extends State<SignupPage> {
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Password",
-                    prefixIcon: Icon(Icons.password_outlined, color: Colors.blueAccent),
+                    prefixIcon: Icon(Icons.password_outlined, color: Colors.lightGreen),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black
@@ -145,7 +145,7 @@ class _SignupPageState extends State<SignupPage> {
               height: 50,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Colors.amber,
+                color: Colors.lightGreen,
               ),
               child: const Center(
                 child: Text(
@@ -157,7 +157,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
           SizedBox(height: 10,),
           RichText(text: TextSpan(
-            text: "Already have an account?", style: TextStyle(color: Colors.white, fontSize: 15,),
+            text: "Already have an account?", style: TextStyle(color: Colors.green, fontSize: 15,),
             children: [
               TextSpan(
                 text: " Login", style: TextStyle(color: Color.fromARGB(255, 204, 204, 204), fontSize: 15, fontWeight: FontWeight.bold),
