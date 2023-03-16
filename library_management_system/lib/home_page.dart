@@ -106,21 +106,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: const Text('Browse Catalog'),
                   ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  ElevatedButton(
-                      style: style,
-                      onPressed: () {
-                        Get.to(() => const DebugMenu());
-                      },
-                      child: const Text(
-                        "Warp Zone",
-                        style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ))
+                  
                 ],
               ),
             )
