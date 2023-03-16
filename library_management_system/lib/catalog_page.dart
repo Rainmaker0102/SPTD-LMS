@@ -6,11 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:library_management_system/search_page.dart';
 import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
 
+import 'authorization_control.dart';
+
 class CatalogPage extends StatefulWidget {
-  const CatalogPage({super.key});
+  String email;
+  CatalogPage({super.key, required this.email});
 
   @override
   State<CatalogPage> createState() => _CatalogPageState();
@@ -41,13 +45,50 @@ class _CatalogPageState extends State<CatalogPage> {
             ],),
           ),
 
-          const SizedBox(height: 80,),
+          const SizedBox(height: 30,),
+
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Signed in as:",
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white
+                      ),
+                    ),
+                    Text(
+                      widget.email,
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 50,),
 
           ElevatedButton(
             style: style,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>SearchPage());
+            },
             child: const Text('Browse Catalog'),
           ),
+
+          const SizedBox(height: 50,),
+
+          ElevatedButton(
+            style: style,
+            onPressed: () {
+              AuthorizationControl.instance.logOut();
+            },
+            child: const Text('Logout'),
+          ),
+
         ],
       ),
     );
