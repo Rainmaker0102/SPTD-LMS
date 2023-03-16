@@ -5,9 +5,10 @@ import 'package:get/get.dart';
 import 'package:library_management_system/account_info.dart';
 import 'package:library_management_system/catalog_page.dart';
 import 'package:library_management_system/home_page.dart';
-import 'package:library_management_system/loan_page.dart';
+import 'package:library_management_system/item_edit_page.dart';
 import 'package:library_management_system/login_page.dart';
 import 'package:library_management_system/logout_page.dart';
+import 'package:library_management_system/search_page.dart';
 import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
 
@@ -51,105 +52,121 @@ class _DebugMenuState extends State<DebugMenu> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => WelcomePage(email:"",)), child: const Text(
-                          "Welcome Page",
-                          style: TextStyle(
+                      onPressed: () => Get.to(() => WelcomePage(
+                            email: "",
+                          )),
+                      child: const Text(
+                        "Welcome Page",
+                        style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
+                            color: Colors.white),
                       ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () => Get.to(() => const AccountInfoPage()), child: const Text(
-                          "Account Info Page",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
-                      ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () => Get.to(() => CatalogPage(email: "debug@debug.com")), child: const Text(
-                          "Catalog Page",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
-                      ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () => Get.to(() => const HomePage()), child: const Text(
-                          "Home Page",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
-                      ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () => Get.to(() => const LoanPage()), child: const Text(
-                          "Loan Page",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => const LoginPage()), child: const Text(
-                          "Login Page",
-                          style: TextStyle(
+                      onPressed: () => Get.to(() => const AccountInfoPage()),
+                      child: const Text(
+                        "Account Info Page",
+                        style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => const LogoutPage()), child: const Text(
-                          "Logout Page",
-                          style: TextStyle(
+                      onPressed: () =>
+                          Get.to(() => CatalogPage(email: "debug@debug.com")),
+                      child: const Text(
+                        "Catalog Page",
+                        style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => const SignupPage()), child: const Text(
-                          "Signup Page",
-                          style: TextStyle(
+                      onPressed: () => Get.to(() => const HomePage()),
+                      child: const Text(
+                        "Home Page",
+                        style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
-                          ),
-                        ),
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const ItemEditPage()),
+                      child: const Text(
+                        "Item Edit Page",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const LoginPage()),
+                      child: const Text(
+                        "Login Page",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const LogoutPage()),
+                      child: const Text(
+                        "Logout Page",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const SignupPage()),
+                      child: const Text(
+                        "Signup Page",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const SearchPage()),
+                      child: const Text(
+                        "Search Page",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ],

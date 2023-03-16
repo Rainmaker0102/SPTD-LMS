@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:library_management_system/catalog_page.dart';
+import 'package:library_management_system/debug_menu.dart';
 import 'package:library_management_system/home_page.dart';
-import 'package:library_management_system/loan_page.dart';
+import 'package:library_management_system/item_edit_page.dart';
 
 import 'login_page.dart';
 import 'welcome_page.dart';
@@ -27,7 +28,8 @@ class AuthorizationControl extends GetxController{
   _initialScreen(User? user){
     if(user==null){
       print("Login page");
-      Get.offAll(()=>LoginPage()); //comment out to test a different page on startup
+      // Get.offAll(()=>LoginPage()); //comment out to test a different page on startup
+      Get.offAll(()=>DebugMenu()); //change the part to whatever page you want to test
       //Get.offAll(()=>INSERTPAGETO_OPEN()); //change the part to whatever page you want to test
     }else{
       Get.offAll(()=>CatalogPage(email: user.email!));
