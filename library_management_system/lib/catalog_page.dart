@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:library_management_system/debug_menu.dart';
 import 'package:library_management_system/search_page.dart';
 
 import 'authorization_control.dart';
@@ -22,7 +23,7 @@ class _CatalogPageState extends State<CatalogPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 40));
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 40));
     return Scaffold(
       backgroundColor: Colors.lightGreen,
       body: Column(
@@ -30,48 +31,48 @@ class _CatalogPageState extends State<CatalogPage> {
           Container(
             margin: const EdgeInsets.only(top: 50),
             width: w,
-            height: h*.2,
-            child: Column(children: const [
-              Text("Library Home",
-                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white),
-              )
-            ],),
+            height: h * .2,
+            child: Column(
+              children: const [
+                Text(
+                  "Library Home",
+                  style: TextStyle(
+                      fontSize: 100,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                )
+              ],
+            ),
           ),
-
-          const SizedBox(height: 30,),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Signed in as:",
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.white
-                    ),
-                  ),
-                  Text(
-                    widget.email,
-                    style: const TextStyle(
-                      fontSize: 30,
-                      color: Colors.white
-                    ),
-                  ),
-                ],
+          const SizedBox(
+            height: 30,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Signed in as:",
+                style: TextStyle(fontSize: 30, color: Colors.white),
               ),
-
-              const SizedBox(height: 50,),
-
+              Text(
+                widget.email,
+                style: const TextStyle(fontSize: 30, color: Colors.white),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
           ElevatedButton(
             style: style,
             onPressed: () {
-              Get.to(()=>const SearchPage());
+              Get.to(() => const SearchPage());
             },
             child: const Text('Browse Catalog'),
           ),
-
-          const SizedBox(height: 50,),
-
+          const SizedBox(
+            height: 50,
+          ),
           ElevatedButton(
             style: style,
             onPressed: () {
@@ -79,7 +80,21 @@ class _CatalogPageState extends State<CatalogPage> {
             },
             child: const Text('Logout'),
           ),
-
+          const SizedBox(
+            height: 40,
+          ),
+          ElevatedButton(
+              style: style,
+              onPressed: () {
+                Get.to(() => const DebugMenu());
+              },
+              child: const Text(
+                "Warp Zone",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ))
         ],
       ),
     );
