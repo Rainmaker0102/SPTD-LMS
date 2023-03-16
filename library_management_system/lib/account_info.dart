@@ -208,25 +208,6 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
           const SizedBox(
             height: 10,
           ),
-          
-          // RichText(
-          //   text: const TextSpan(
-          //     text: "Already have an account?",
-          //     style: TextStyle(
-          //       color: Colors.white,
-          //       fontSize: 15,
-          //     ),
-          //     children: [
-          //       TextSpan(
-          //         text: " Login",
-          //         style: TextStyle(
-          //             color: Color.fromARGB(255, 204, 204, 204),
-          //             fontSize: 15,
-          //             fontWeight: FontWeight.bold),
-          //       )
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );
