@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:library_management_system/search_page.dart';
 import 'package:library_management_system/signup_page.dart';
 import 'package:library_management_system/welcome_page.dart';
 
@@ -102,7 +103,9 @@ class _HomePageState extends State<HomePage> {
 
               ElevatedButton(
                 style: style,
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(()=> const SearchPage());
+                },
                 child: const Text('Browse Catalog'),
               ),
             ],
