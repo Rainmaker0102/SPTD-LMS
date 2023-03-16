@@ -77,7 +77,7 @@ class _DebugMenuState extends State<DebugMenu> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () => Get.to(() => const CatalogPage()), child: const Text(
+                        onPressed: () => Get.to(() => CatalogPage(email: "debug@debug.com")), child: const Text(
                           "Catalog Page",
                           style: TextStyle(
                             fontSize: 30,
