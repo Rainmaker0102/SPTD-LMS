@@ -1,16 +1,16 @@
 # library_management_system
 
-A new Flutter project.
+A Flutter/Firebase web app that runs an online library website
 
-## Getting Started
+## How to run the executable
 
-This project is a starting point for a Flutter application.
+Requirements: Python3
 
-A few resources to get you started if this is your first Flutter project:
+Navigate to the folder where the web app build is.
+Run the command `python3 -m http.server` and using your web browser of choice navigate to the web address that shows in the terminal.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to build the web app
+1. Using this [link](https://docs.flutter.dev/get-started/install) follow the instructions to get your flutter sdk working. Most of the issues brought up by `flutter doctor` can be ignored so long as your sdk can make a web build
+2. Follow the directions in this [link](https://firebase.google.com/docs/flutter/setup?platform=web) so the firebase project can be instanced in the flutter app.
+3. Assuming the IDE is VS Code, navigate to `Terminal > Run Build Task > flutter: flutter build web`.
+4. The web build will be under `./build/web`
